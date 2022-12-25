@@ -11,10 +11,6 @@ public class Test {
         ProductManager productManager = new ProductManager();
         int secim;
         Scanner klavye = new Scanner(System.in);
-        String zaman = String.valueOf(productManager.getTime());
-        String dosyaAdi = zaman.replace(" ", "-");
-        String dogruDosyaAdi = dosyaAdi.replace(":", "-");
-        System.out.println(dogruDosyaAdi);
         productManager.dosyaOlustur("C:\\Users\\Lenovo\\OneDrive\\Masaüstü\\Veritabanı Dosyaları\\" + productManager.getZaman()+ ".txt");
         File dosya = productManager.dosyaDondur();
         FileWriter fw = productManager.fwDondur(dosya);
