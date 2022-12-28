@@ -40,7 +40,7 @@ public class ProductManager extends Product {
         zaman = zamn + year;
         return zaman;
     }
-    
+
     public String getZaman() {
         return this.zaman;
     }
@@ -101,7 +101,7 @@ public class ProductManager extends Product {
     }
 
     public void kategoriGöster() {
-        System.out.println("\nOluşturmak İstediğiniz Veritabanının Kategorisini Seçiniz Lütfen :");
+        System.out.println("\nEklemek İstediğiniz Ürünün Kategorisini Seçiniz Lütfen :");
         System.out.println("***********************************");
         System.out.println("1-) Kıyafet\n2-) Aksesuar\n3-) Elektronik\n4-) Kişisel Bakım\n5-) Çıkış");
         System.out.println("***********************************");
@@ -115,7 +115,7 @@ public class ProductManager extends Product {
     }
 
     public void bildir() {
-        System.out.println("\n" + getCategory() + " Veritabanı Oluşturuldu.");
+        System.out.println("\n Veritabanı Oluşturuldu.");
     }
 
     private void kategoriAta(int kategori) {
@@ -178,40 +178,12 @@ public class ProductManager extends Product {
         return date;
     }
 
-    public void urunBilgiAl(String kategori) {
+    public void urunBilgiAl() {
         Scanner input = new Scanner(System.in);
-        switch (kategori) {
-            case "Kıyafet":
-                System.out.println("Ürün İsmini Giriniz : ");
-                setName(input.nextLine());
-                System.out.println("Ürün Fiyatını Giriniz :");
-                setPrice(input.nextDouble());
-
-                break;
-            case "Aksesuar":
-                System.out.println("Ürün İsmini Giriniz : ");
-                setName(input.nextLine());
-                System.out.println("Ürün Fiyatını Giriniz :");
-                setPrice(input.nextDouble());
-
-                break;
-            case "Elektronik":
-                System.out.println("Ürün İsmini Giriniz : ");
-                setName(input.nextLine());
-                System.out.println("Ürün Fiyatını Giriniz :");
-                setPrice(input.nextDouble());
-
-                break;
-            case "Kişisel Bakım":
-                System.out.println("Ürün İsmini Giriniz : ");
-                setName(input.nextLine());
-                System.out.println("Ürün Fiyatını Giriniz :");
-                setPrice(input.nextDouble());
-
-                break;
-            default:
-                break;
-        }
+        System.out.println("Ürün İsmini Giriniz : ");
+        setName(input.nextLine());
+        System.out.println("Ürün Fiyatını Giriniz :");
+        setPrice(input.nextDouble());
     }
 
     public static void readFile(String path) {
@@ -246,15 +218,15 @@ public class ProductManager extends Product {
         public void veri_oku(String cevap, Scanner klavye) {
             try {
                 if ("e".equals(cevap)) {
-                    String path = "C:\\Users\\Lenovo\\OneDrive\\Masaüstü\\Veritabanı Dosyaları\\" + zamanTut() + ".txt";
+                    String path = "C:\\Users\\Lenovo\\OneDrive\\Masaüstü\\Veritabanı Dosyaları\\" + getZaman() + ".txt";
                     readFile(path);
                 } else {
                     bye();
                 }
             } catch (Exception e) {
-                hataBıldır(e, 242);
+                hataBıldır(e, 246);
             }
-            
+
         }
 
     }
